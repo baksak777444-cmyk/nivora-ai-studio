@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Nivora AI Studio</title>
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #080b18, #101b3d);
+  color: white;
+  min-height: 100vh;
+  text-align: center;
+}
+
+.container {
+  max-width: 700px;
+  margin: auto;
+  padding: 35px 20px;
+}
+
+h1 {
+  font-size: 38px;
+  margin-bottom: 5px;
+}
+
+.ai {
+  color: #7c8cff;
+}
+
+.subtitle {
+  color: #b8bfd8;
+  margin-bottom: 30px;
+}
+
+.box {
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 20px;
+  padding: 25px;
+  margin-top: 20px;
+}
+
+input[type="file"] {
+  width: 100%;
+  padding: 15px;
+  background: #151c35;
+  border-radius: 12px;
+  color: white;
+  margin-bottom: 15px;
+}
+
+textarea {
+  width: 100%;
+  height: 120px;
+  border: none;
+  border-radius: 12px;
+  padding: 15px;
+  font-size: 16px;
+  background: #151c35;
+  color: white;
+}
+
+button {
+  width: 100%;
+  padding: 16px;
+  margin-top: 15px;
+  border: none;
+  border-radius: 12px;
+  font-size: 17px;
+  font-weight: bold;
+  color: white;
+  background: linear-gradient(90deg, #625cff, #a855f7);
+}
+
+.tools {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.tool {
+  background: #151c35;
+  padding: 14px;
+  border-radius: 12px;
+}
+
+#preview {
+  display: none;
+  width: 100%;
+  margin-top: 20px;
+  border-radius: 15px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Nivora <span class="ai">AI</span> Studio</h1>
+
+<p class="subtitle">
+مولد ومحرر صور بالذكاء الاصطناعي
+</p>
+
+<div class="box">
+
+<h2>ارفع صورتك</h2>
+
+<input type="file" id="imageInput" accept="image/*">
+
+<img id="preview">
+
+<textarea
+id="prompt"
+placeholder="اكتب التعديل المطلوب، مثال: غيّر لون الملابس إلى الأسود">
+</textarea>
+
+<div class="tools">
+
+<div class="tool">✨ توليد صورة</div>
+
+<div class="tool">🪄 تعديل الصورة</div>
+
+<div class="tool">👕 تغيير الملابس</div>
+
+<div class="tool">🌄 تغيير الخلفية</div>
+
+<div class="tool">🎨 تغيير اللون</div>
+
+<div class="tool">🧹 إزالة عنصر</div>
+
+</div>
+
+<button id="generateButton">
+✨ تنفيذ التعديل
+</button>
+
+</div>
+</div>
+
+<script>
+
+const input =
+document.getElementById("imageInput");
+
+const preview =
+document.getElementById("preview");
+
+input.addEventListener("change", function() {
+
+const file = this.files[0];
+
+if (file) {
+
+preview.src =
+URL.createObjectURL(file);
+
+preview.style.display =
+"block";
+
+}
+
+});
+
+document.getElementById("generateButton").onclick =
+function() {
+
+alert(
+"Nivora AI Studio جاهز. سيتم ربط محرك الذكاء الاصطناعي في الخطوة التالية."
+);
+
+};
+
+</script>
+
+</body>
+</html>
