@@ -1,0 +1,25 @@
+// Nivora AI Studio - API configuration
+const NIVORA_API = { name: "Nivora AI Studio", version: "1.0",
+async generateImage(prompt) { if (!prompt || !prompt.trim()) { throw new Error("اكتب وصف الصورة أولاً"); }
+console.log("Generate image:", prompt);
+
+// سيتم ربط خدمة توليد الصور هنا
+return {
+  success: true,
+  prompt: prompt
+};
+},
+async editImage(image, prompt) { if (!image) { throw new Error("ارفع صورة أولاً"); }
+if (!prompt || !prompt.trim()) {
+  throw new Error("اكتب التعديل المطلوب");
+}
+
+console.log("Edit image:", prompt);
+
+// سيتم ربط خدمة تعديل الصور هنا
+return {
+  success: true,
+  prompt: prompt
+};
+} };
+window.NIVORA_API = NIVORA_API;
